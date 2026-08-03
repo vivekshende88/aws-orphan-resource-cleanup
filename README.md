@@ -1,10 +1,46 @@
-# AWS Orphan Resource Cleanup
+# AWS Orphan Resource Cleanup using GitHub Actions
 
-GitHub Actions pipeline that authenticates to AWS using IAM credentials stored as GitHub Secrets and deletes unattached EBS volumes.
+## Overview
 
-## GitHub Secrets
-- AWS_ACCESS_KEY_ID
-- AWS_SECRET_ACCESS_KEY
-- AWS_REGION
+This project automates the detection and deletion of orphaned Amazon EBS volumes using GitHub Actions and AWS CLI.
 
-Trigger manually from the Actions tab.
+## Problem Statement
+
+Unused cloud resources continue to incur storage costs even after compute resources are deleted. This project automates the cleanup process to optimize cloud costs.
+
+## Architecture
+
+GitHub Actions
+        │
+        ▼
+AWS IAM Authentication
+        │
+        ▼
+AWS CLI
+        │
+        ▼
+Detect Unattached EBS Volumes
+        │
+        ▼
+Delete Orphaned Volumes
+
+## Technologies
+
+- AWS EC2
+- Amazon EBS
+- AWS CLI
+- GitHub Actions
+- IAM
+- Bash
+- YAML
+
+## Workflow
+
+1. Configure AWS credentials using GitHub Secrets
+2. Execute GitHub Action
+3. Detect orphaned EBS volumes
+4. Delete unattached volumes
+5. Display execution logs
+
+## Repository Structure
+
